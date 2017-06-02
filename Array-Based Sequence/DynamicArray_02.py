@@ -1,5 +1,6 @@
 # provide low-level arrays
 import ctypes
+import sys
 
 """
 A dynamic array class akin to a simplified Python List[] class.
@@ -40,4 +41,17 @@ class DynamicArray(object):
 
     # return new array with capacity c
     def _make_array(self, c):
-        return (c * ctypes.py_object())
+        return (c * ctypes.py_object)()
+
+obj = DynamicArray()
+obj = []
+data = []
+for k in range(100):
+    obj_len = len(obj)               # number of elements
+    data_len = len(data)
+    obj_size = sys.getsizeof(obj)     # actual sizes in bytes
+    data_size = sys.getsizeof(data)
+    print("Length: {0:2d}, Size in bytes: {1:3d}".format(obj_len, obj_size))
+    # print("obj: {1:3d}, data:{1:3d}".format(obj_size, data_size))
+    obj.append(None)           # increase size by None
+    data.append(None)
