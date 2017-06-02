@@ -27,7 +27,7 @@ class DynamicArray(object):
     def append(self, item):
         # when the room is not enough, double the capacity
         if self._n == self._capacity:
-            self._resize(2 * self._capacity)
+            self._resize(5 * self._capacity)
         self._A[self._n] = item
         self._n += 1
 
@@ -44,14 +44,21 @@ class DynamicArray(object):
         return (c * ctypes.py_object)()
 
 obj = DynamicArray()
-obj = []
+print(type(obj))
+# obj = []
+obj.append(1)
+print(type(obj))
+print(obj[0])
 data = []
-for k in range(100):
-    obj_len = len(obj)               # number of elements
+print(type(data))
+for k in range(10):
+    # obj_len = len(obj)               # number of elements
     data_len = len(data)
     obj_size = sys.getsizeof(obj)     # actual sizes in bytes
     data_size = sys.getsizeof(data)
-    print("Length: {0:2d}, Size in bytes: {1:3d}".format(obj_len, obj_size))
-    # print("obj: {1:3d}, data:{1:3d}".format(obj_size, data_size))
+    # print("Length: {0:2d}, Size in bytes: {1:3d}".format(obj_len, obj_size))
+    print("obj: {1:3d}, data:{1:3d}".format(obj_size, data_size))
     obj.append(None)           # increase size by None
     data.append(None)
+
+print(type(obj))
