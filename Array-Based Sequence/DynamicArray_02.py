@@ -5,7 +5,7 @@ import sys
 """
 A dynamic array class akin to a simplified Python List[] class.
 """
-class DynamicArray(object):
+class DynamicArray:
 
     # creating an empty array.
     def __init__(self):
