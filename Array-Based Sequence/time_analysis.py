@@ -8,5 +8,5 @@ def compute_average(n):
     end = time()
     return (end - start)
 
-print(compute_average(10))
+print(compute_average(1000))
 print(compute_average(1000000))
