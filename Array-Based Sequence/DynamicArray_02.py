@@ -27,7 +27,7 @@ class DynamicArray:
     def append(self, item):
         # when the room is not enough, double the capacity
         if self._n == self._capacity:
-            self._resize(5 * self._capacity)
+            self._resize(2 * self._capacity)
         self._A[self._n] = item
         self._n += 1
 
